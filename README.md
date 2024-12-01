@@ -74,10 +74,6 @@ This is a backend API built with **Express.js** and **MongoDB**. It provides var
 - **GET /profile**  
   Retrieves the profile of the authenticated user. This route is protected and requires the user to be logged in (JWT token in cookies).
 
-## Postman Collection
-
-You can test the API using the [Postman Collection](https://www.postman.com/your-postman-collection-link).
-
 ## Error Handling
 
 The API uses custom error handling. If an error occurs, the API will return an appropriate response with the following structure:
