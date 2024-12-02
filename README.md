@@ -82,17 +82,19 @@ Uses **nodemailer** with Gmail to send emails, such as password reset links.
 ## API Endpoints
 
 ### **Authentication Routes**
-| Method | Endpoint              | Description                   |
-|--------|-----------------------|-------------------------------|
-| POST   | `/auth/register`      | Register a new user.          |
-| POST   | `/auth/login`         | Authenticate user.            |
-| POST   | `/auth/forgot-password` | Request a password reset.    |
-| POST   | `/auth/reset-password`  | Reset password using token.  |
+| Method | Endpoint                    | Description                   |
+|--------|-----------------------------|-------------------------------|
+| POST   | `/api/auth/register`        | Register a new user.          |
+| POST   | `/api/auth/login`           | Authenticate user.            |
+| POST   | `/api/auth/logout`          | logout user.                  |
+| POST   | `/api/auth/forgotPassword`  | Request a password reset.     |
+| POST   | `/api/auth/verifyResetCode` | Verify reset code.            |
+| PUT    | `/api/auth/resetPassword`   | Reset password using token.   |
 
 ### **Profile Route**
-| Method | Endpoint              | Description                   |
-|--------|-----------------------|-------------------------------|
-| GET    | `/profile`            | Retrieve user profile.        |
+| Method | Endpoint                 | Description                   |
+|--------|--------------------------|-------------------------------|
+| GET    | `/api/profile`            | Retrieve user profile.        |
 
 ---
 
