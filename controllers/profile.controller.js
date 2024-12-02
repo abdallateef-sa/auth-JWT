@@ -2,7 +2,7 @@ const user = require('../models/user.model');
 
 const getProfile = async (req, res, next) => {
   try {
-    const userId = req.user.id;  // الحصول على ID المستخدم من التوكن
+    const userId = req.user.id; 
 
     const foundUser = await user.findById(userId);
 

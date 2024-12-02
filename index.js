@@ -1,4 +1,3 @@
-// Import dependencies
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -6,33 +5,30 @@ const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 
 
-// Initialize environment variables
 dotenv.config();
 
-// Create Express app
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
-// Connect to MongoDB
+
 mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
-// Import files
+
 const userRoutes = require("./routes/auth.route.js");
 const profileRoutes = require("./routes/profile.route.js");
 
-// user routes
+
 app.use("/api/auth", userRoutes);
 app.use("/api/profile", profileRoutes);
 
-// Basic Route
+
 app.get("/", (req, res) => {
   res.send("Welcome to the Backend!");
 });
