@@ -23,6 +23,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Password is required"],
   },
+  passwordResetCode: String,
+  passwordResetExpires: Date,
+  passwordResetVerified: Boolean,
   dateOfBirth: {
     type: Date,
     required: [true, "Date of birth is required"],

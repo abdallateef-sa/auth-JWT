@@ -25,12 +25,12 @@ mongoose
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 // Import files
-const userRoutes = require("./routes/user.route.js");
+const userRoutes = require("./routes/auth.route.js");
 const profileRoutes = require("./routes/profile.route.js");
 
 // user routes
-app.use("/api/users", userRoutes);
-app.use("/profile", profileRoutes);
+app.use("/api/auth", userRoutes);
+app.use("/api/profile", profileRoutes);
 
 // Basic Route
 app.get("/", (req, res) => {
