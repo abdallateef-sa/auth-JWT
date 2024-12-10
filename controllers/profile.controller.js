@@ -1,6 +1,6 @@
-const user = require('../models/user.model');
+import user from "../models/user.model.js";
 
-const getProfile = async (req, res, next) => {
+export const getProfile = async (req, res, next) => {
   try {
     const userId = req.user.id; 
 
@@ -28,5 +28,3 @@ const getProfile = async (req, res, next) => {
     next(error);
   }
 };
-
-module.exports = {getProfile} ;

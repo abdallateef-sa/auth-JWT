@@ -1,10 +1,11 @@
-const user = require("../models/user.model");
-const httpStatusText = require("../utils/httpStatusText");
-const AppError = require("../utils/appError");
-const bcrypt = require("bcrypt");
-const generateJWT = require("../utils/generateJWT");
-const sendMail = require("../utils/sendMaile");
-const asyncWrapper = require("../middlewares/asyncWrapper");
+import user from "../models/user.model.js";
+import httpStatusText from "../utils/httpStatusText.js";
+import AppError from "../utils/appError.js";
+import bcrypt from "bcrypt";
+import generateJWT from "../utils/generateJWT.js";
+import sendMail from "../utils/sendMaile.js";
+import asyncWrapper from "../middlewares/asyncWrapper.js";
+
 
 const register = asyncWrapper(async (req, res, next) => {
   const {
@@ -125,7 +126,7 @@ const login = asyncWrapper(async (req, res, next) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: true , // process.env.NODE_ENV === "production"
       sameSite: "strict",
       maxAge: 24 * 60 * 60 * 1000,
       expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
@@ -153,7 +154,7 @@ const logout = asyncWrapper(async (req, res, next) => {
 
   res.clearCookie("token", {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: true, //process.env.NODE_ENV === "production"
     sameSite: "strict",
   });
 
@@ -287,11 +288,11 @@ const resetPassword = asyncWrapper(async (req, res, next) => {
   });
 });
 
-module.exports = {
+export default {
   register,
   login,
   logout,
   forgotPassword,
   verifyResetCode,
-  resetPassword
+  resetPassword,
 };

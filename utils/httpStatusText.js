@@ -1,9 +1,7 @@
-const SUCCESS = "success";
-const ERROR = "error";
-const FAIL = "fail";
-
-module.exports = {
-  SUCCESS,
-  ERROR,
-  FAIL,
+const httpStatusText = {
+  SUCCESS: "success",
+  ERROR: "error",
+  FAIL: "fail",
 };
+
+export default httpStatusText;

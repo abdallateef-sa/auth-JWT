@@ -1,8 +1,9 @@
-const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const cookieParser = require("cookie-parser");
-const mongoose = require("mongoose");
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+import mongoose from "mongoose";
+
 
 
 dotenv.config();
@@ -21,8 +22,8 @@ mongoose
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 
-const userRoutes = require("./routes/auth.route.js");
-const profileRoutes = require("./routes/profile.route.js");
+import userRoutes from "./routes/auth.route.js";
+import profileRoutes from "./routes/profile.route.js";
 
 
 app.use("/api/auth", userRoutes);

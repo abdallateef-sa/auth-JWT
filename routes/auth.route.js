@@ -1,8 +1,7 @@
-const express = require("express");
+import express from "express";
+import authController from "../controllers/auth.controller.js";
+
 const router = express.Router();
-const authController = require("../controllers/auth.controller");
-
-
 
 router.route("/register")
   .post(authController.register);
@@ -14,12 +13,12 @@ router.route("/logout")
   .post(authController.logout);
 
 router.route("/forgotPassword")
-  .post(authController.forgotPassword);  
+  .post(authController.forgotPassword);
 
 router.route("/verifyResetCode")
-  .post(authController.verifyResetCode);    
+  .post(authController.verifyResetCode);
 
 router.route("/resetPassword")
-  .put(authController.resetPassword);   
+  .put(authController.resetPassword);
 
-module.exports = router;  
+export default router;

@@ -1,6 +1,7 @@
-const jwt = require("jsonwebtoken");
-const AppError = require("../utils/appError");
-const httpStatusText = require("../utils/httpStatusText");
+import jwt from "jsonwebtoken";
+import AppError from "../utils/appError.js";
+import httpStatusText from "../utils/httpStatusText.js";
+
 
 const verifyToken = (req, res, next) => {
   try {
@@ -18,4 +19,4 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-module.exports = verifyToken;
+export default verifyToken;
