@@ -1,8 +1,8 @@
-# User Management System - V 0.2.0
+# Auth-JWT System 
 
 ## Project Overview
 
-The **User Management System** is a backend application designed for user registration, authentication, and profile management. It includes secure password reset functionality. Built with **Node.js** and **Express.js**, it uses **JWT** for authentication and **MongoDB** as the database. The system emphasizes security and ease of integration with a frontend.
+The **User Management System** is a backend application designed for user registration, authentication, and profile management. It includes secure password reset functionality. Built with **Node.js** and **Express.js**, it uses **JWT** for authentication and **MongoDB** as the database. The system emphasizes security and ease of integration with a frontend, while also utilizing **ECMAScript Modules (ESM)** syntax for a cleaner and more modern codebase.
 
 ### Key Features:
 - **User Registration**: Allows users to create accounts with email, phone, and password.
@@ -86,7 +86,7 @@ Uses **nodemailer** with Gmail to send emails, such as password reset links.
 |--------|-----------------------------|-------------------------------|
 | POST   | `/api/auth/register`        | Register a new user.          |
 | POST   | `/api/auth/login`           | Authenticate user.            |
-| POST   | `/api/auth/logout`          | logout user.                  |
+| POST   | `/api/auth/logout`          | Logout user.                  |
 | POST   | `/api/auth/forgotPassword`  | Request a password reset.     |
 | POST   | `/api/auth/verifyResetCode` | Verify reset code.            |
 | PUT    | `/api/auth/resetPassword`   | Reset password using token.   |
@@ -99,7 +99,7 @@ Uses **nodemailer** with Gmail to send emails, such as password reset links.
 ---
 
 ## Technologies Used
-- **Node.js**: Backend runtime.
+- **Node.js** (ESM): Backend runtime using ECMAScript Modules.
 - **Express.js**: Web framework.
 - **MongoDB**: NoSQL database.
 - **JWT**: Token-based authentication.
@@ -111,7 +111,7 @@ Uses **nodemailer** with Gmail to send emails, such as password reset links.
 ## Installation Instructions
 
 ### Prerequisites
-- **Node.js** and **npm** installed.
+- **Node.js** and **npm** installed (ensure you're using Node.js version 14.x or higher).
 - A **MongoDB** instance (local or hosted).
 
 ### Steps to Run Locally
@@ -154,3 +154,9 @@ Uses **nodemailer** with Gmail to send emails, such as password reset links.
 
 3. **Profile Management**:
    - Send a GET request to `/profile` with the JWT token for retrieving profile details.
+
+---
+
+## Code Notes:
+- **ESM Support**: The codebase is built using **ES Modules** (`import/export` syntax), allowing for a modern and cleaner code structure.
+- Ensure you run the project with the appropriate Node.js version (14.x or higher) for full ESM support.
